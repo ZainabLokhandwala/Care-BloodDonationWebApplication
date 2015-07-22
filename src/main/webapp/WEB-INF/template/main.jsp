@@ -4,14 +4,12 @@
 <tiles:insertAttribute name="head"></tiles:insertAttribute>
 <body>
 <tiles:insertAttribute name="nav"></tiles:insertAttribute>
-<tiles:insertAttribute name="header"></tiles:insertAttribute>
 <!-- Begin Body -->
 <div class="container">
     <div class="row">
-
+        <tiles:insertAttribute name="content"></tiles:insertAttribute>
     </div>
 </div>
-
 
 <!-- script references -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
