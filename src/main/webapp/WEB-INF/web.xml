@@ -7,7 +7,7 @@
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<welcome-file-list>
-		<welcome-file>index</welcome-file>
+		<welcome-file>welcome</welcome-file>
 	</welcome-file-list>
 
 </web-app>

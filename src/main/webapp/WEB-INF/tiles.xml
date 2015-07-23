@@ -8,13 +8,21 @@
     <!-- Default Main Template -->
     <definition name=".mainTemplate" template="/WEB-INF/template/main.jsp">
         <put-attribute name="head" value="/WEB-INF/attributes/head.jsp"></put-attribute>
+        <put-attribute name="search" value="/WEB-INF/attributes/search.jsp"></put-attribute>
         <put-attribute name="header" value="/WEB-INF/attributes/header.jsp"></put-attribute>
         <put-attribute name="nav" value="/WEB-INF/attributes/nav.jsp"></put-attribute>
         <put-attribute name="articles" value="/WEB-INF/attributes/articles.jsp"></put-attribute>
     </definition>
 
-    <definition name="index" extends=".mainTemplate">
-        <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+    <definition name="donor_signup" extends=".mainTemplate" template="/WEB-INF/template/donor_signup.jsp">
+        <put-attribute name="donor_signup_form" value="/WEB-INF/attributes/donor_signup_form.jsp"></put-attribute>
+    </definition>
+
+    <definition name="welcome" extends=".mainTemplate" template="/WEB-INF/template/welcome_page.jsp">
+    </definition>
+
+    <definition name="login" extends=".mainTemplate" template="/WEB-INF/template/login_page.jsp">
+        <put-attribute name="login_form" value="/WEB-INF/attributes/login_form.jsp"></put-attribute>
     </definition>
 
     <!--<definition name="info/about" extends=".mainTemplate">-->

@@ -5,11 +5,11 @@
 <body>
 <tiles:insertAttribute name="nav"></tiles:insertAttribute>
 <tiles:insertAttribute name="header"></tiles:insertAttribute>
-<tiles:insertAttribute name="search"></tiles:insertAttribute>
 <!-- Begin Body -->
 <div class="container">
     <div class="row">
-        <tiles:insertAttribute name="articles"></tiles:insertAttribute>
+        <div class="btn btn-lg btn-danger" style="margin-left: 30%; float: left; margin-right: 1em">Start as Receiver</div>
+        <div class="btn btn-lg btn-danger" style="float: left">Start as Donor</div>
     </div>
 </div>
 

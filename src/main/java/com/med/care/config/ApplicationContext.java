@@ -23,7 +23,7 @@ public class ApplicationContext {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
-        factoryBean.setPackagesToScan("org.pc.smart.domain.model");
+        factoryBean.setPackagesToScan("com.med.care.domain");
         factoryBean.setDataSource(dataSource());
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         Properties properties = new Properties();
@@ -47,8 +47,8 @@ public class ApplicationContext {
         DriverManagerDataSource source = new DriverManagerDataSource();
         source.setDriverClassName("com.mysql.jdbc.Driver");
         source.setUsername("root");
-        source.setPassword("");
-        source.setUrl("jdbc:mysql://localhost:3306/sql682706");
+        source.setPassword("123456");
+        source.setUrl("jdbc:mysql://localhost:3306/care_blood_donation");
         return source;
     }
 }

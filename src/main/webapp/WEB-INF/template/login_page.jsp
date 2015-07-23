@@ -5,11 +5,10 @@
 <body>
 <tiles:insertAttribute name="nav"></tiles:insertAttribute>
 <tiles:insertAttribute name="header"></tiles:insertAttribute>
-<tiles:insertAttribute name="search"></tiles:insertAttribute>
 <!-- Begin Body -->
 <div class="container">
     <div class="row">
-        <tiles:insertAttribute name="articles"></tiles:insertAttribute>
+        <tiles:insertAttribute name="login_form"></tiles:insertAttribute>
     </div>
 </div>
 

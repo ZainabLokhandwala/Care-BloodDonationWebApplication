@@ -5,11 +5,10 @@
         </a>
 
         <div class="nav-collapse collase">
-            <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="${pageContext.request.contextPath}">Home</a></li>
             </ul>
+
             <ul class="nav navbar-right navbar-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>
@@ -18,7 +17,7 @@
                         <li><a href="#">Login</a></li>
                         <li><a href="#">Profile</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="#">Logout</a></li>
                     </ul>
                 </li>
             </ul>

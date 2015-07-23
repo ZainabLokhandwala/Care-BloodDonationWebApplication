@@ -5,12 +5,11 @@
 <body>
 <tiles:insertAttribute name="nav"></tiles:insertAttribute>
 <tiles:insertAttribute name="header"></tiles:insertAttribute>
-<tiles:insertAttribute name="search"></tiles:insertAttribute>
 <!-- Begin Body -->
 <div class="container">
-    <div class="row">
-        <tiles:insertAttribute name="articles"></tiles:insertAttribute>
-    </div>
+  <div class="row">
+    <tiles:insertAttribute name="login_form"></tiles:insertAttribute>
+  </div>
 </div>
 
 <!-- script references -->
@@ -18,4 +17,3 @@
 <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/scripts.js"></script>
 </body>
-</html>
