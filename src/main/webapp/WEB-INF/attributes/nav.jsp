@@ -1,44 +1,28 @@
-<nav class="navbar navbar-static">
-  <div class="container">
-    <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-      <span class="glyphicon glyphicon-chevron-down"></span>
-    </a>
+<nav class="navbar navbar-static-top" style="position: fixed;top: 0;width: 100%">
+    <div class="container">
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
 
-    <div class="nav-collapse collase">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-      <ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                  class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
-
-                <div class="input-group-btn">
-                  <button type="submit" class="btn btn-default"><i
-                          class="glyphicon glyphicon-search"></i></button>
-                </div>
-              </div>
-            </form>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>
-            <i class="glyphicon glyphicon-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Profile</a></li>
-            <li class="divider"></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </li>
-      </ul>
+        <div class="nav-collapse collase">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul class="nav navbar-right navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 <!-- /.navbar -->
