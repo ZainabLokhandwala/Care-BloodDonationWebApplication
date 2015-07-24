@@ -1,34 +1,34 @@
 <div class="panel" style="padding-left: 20%; padding-right: 25%">
   <h2>Register as Donor</h2>
-  <form class="form-horizontal" role="form">
+  <form class="form-horizontal" role="form" action="/donor/signup" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="name">Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name" placeholder="Enter name">
+        <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="user_name">User Name:</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="user_name" placeholder="Enter username">
+        <input type="text" class="form-control" name="user_name" id="user_name" placeholder="Enter username">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Password:</label>
       <div class="col-sm-10">
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+        <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="repwd">Re-enter password</label>
       <div class="col-sm-10">
-        <input type="password" class="form-control" id="repwd" placeholder="Enter password again">
+        <input type="password" class="form-control" id="repwd" name="repwd" placeholder="Enter password again">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="sex">Sex</label>
       <div class="col-sm-10">
-        <select class="form-control" id="sex">
+        <select class="form-control" id="sex" name="sex">
           <option value="1">Male</option>
           <option value="1">Female</option>
         </select>
@@ -37,7 +37,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="type">Blood Type</label>
       <div class="col-sm-10">
-        <select class="form-control" id="type">
+        <select class="form-control" id="type" name="blood_type">
           <option value="A">A</option>
           <option value="B+">B+</option>
           <option value="B-">B-</option>
@@ -49,25 +49,25 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="city">City</label>
       <div class="col-sm-10">
-        <input class="form-control" placeholder="City" id="city">
+        <input class="form-control" placeholder="City" id="city" name="city">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="country">Country</label>
       <div class="col-sm-10">
-        <input class="form-control" placeholder="Country" id="country">
+        <input class="form-control" placeholder="Country" id="country" name="country">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="recent_medications">Recent Medications</label>
       <div class="col-sm-10">
-        <textarea class="form-control" placeholder="Recent Medications" id="recent_medications"></textarea>
+        <textarea class="form-control" placeholder="Recent Medications" id="recent_medications" name="recent_medications"></textarea>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="allergies">Allergies</label>
       <div class="col-sm-10">
-        <textarea class="form-control" placeholder="Allergies" id="allergies"></textarea>
+        <textarea class="form-control" placeholder="Allergies" id="allergies" name="allergies"></textarea>
       </div>
     </div>
     <div class="form-group">

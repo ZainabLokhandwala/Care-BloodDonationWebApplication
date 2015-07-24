@@ -7,6 +7,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 @WebListener
 public class ContextListener implements ServletContextListener {
@@ -15,8 +18,13 @@ public class ContextListener implements ServletContextListener {
 
         Logger logger = Logger.getLogger(ContextListener.class);
         ApplicationContext context = new AnnotationConfigApplicationContext(com.med.care.config.ApplicationContext.class);
+
+        ValidatorFactory  validatorFactory  = Validation.buildDefaultValidatorFactory();
+        Validator validator = validatorFactory.getValidator();
         sce.getServletContext().setAttribute("context", context);
         logger.info("created spring application context and load it to servlet context!!!");
+        sce.getServletContext().setAttribute("validator", validator);
+        logger.info("added validator and load it to servlet context!!!");
     }
 
     @Override

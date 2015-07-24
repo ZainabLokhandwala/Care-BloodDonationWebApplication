@@ -28,6 +28,7 @@ public class ApplicationContext {
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         Properties properties = new Properties();
         properties.put("hibernate.show_sql", true);
+        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         properties.put("hibernate.format_sql", true);
         factoryBean.setJpaProperties(properties);
 

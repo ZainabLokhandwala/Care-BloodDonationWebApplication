@@ -8,7 +8,7 @@
 <!-- Begin Body -->
 <div class="container">
   <div class="row">
-    <tiles:insertAttribute name="login_form"></tiles:insertAttribute>
+    <tiles:insertAttribute name="receiver_signup_form"></tiles:insertAttribute>
   </div>
 </div>
 
