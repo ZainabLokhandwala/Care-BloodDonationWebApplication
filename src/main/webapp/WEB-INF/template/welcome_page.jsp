@@ -7,7 +7,7 @@
 <tiles:insertAttribute name="header"></tiles:insertAttribute>
 <!-- Begin Body -->
 <div class="container">
-    <div class="row" style="background-image: url('/../../${pageContext.request.contextPath}/resources/images/welcome_pic.jpg'); min-height: 27em; background-position: center; background-repeat: no-repeat">
+    <div class="row">
         <h3 style="color: #080808; margin: 1em"><i>
             Welcome To Care,
 
@@ -17,8 +17,12 @@
 
             <br>Donate blood today. And be a HERO!!</i>
         </h3>
-        <div class="btn btn-lg btn-danger" style="margin-left: 30%; float: left; margin-right: 1em">Start as Receiver</div>
-        <div class="btn btn-lg btn-danger" style="float: left">Start as Donor</div>
+        <div style="background-image: url('/../../${pageContext.request.contextPath}/resources/images/welcome_pic.jpg'); min-height: 27em; background-position: center; background-repeat: no-repeat">
+        </div>
+        <div>
+            <div class="btn btn-lg btn-danger" style="margin-left: 35%; float: left; margin-right: 1em">Start as Receiver</div>
+            <div class="btn btn-lg btn-danger" style="float: left">Start as Donor</div>
+        </div>
     </div>
 </div>
 
