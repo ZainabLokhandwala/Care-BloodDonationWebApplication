@@ -1,6 +1,6 @@
 <div class="panel" style="padding-left: 20%; padding-right: 25%">
     <h2>Register as Donor</h2>
-    <form class="form-horizontal" role="form">
+    <form enctype="multipart/form-data" class="form-horizontal" role="form" action="signup" method="post">
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-10">
@@ -10,7 +10,7 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="user_name">User Name:</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" name="user_name" id="user_name" placeholder="Enter username">
+                <input type="" class="form-control" name="user_name" id="user_name" placeholder="Enter username">
             </div>
         </div>
         <div class="form-group">
@@ -23,6 +23,12 @@
             <label class="control-label col-sm-2" for="repwd">Re-enter password</label>
             <div class="col-sm-10">
                 <input type="password" name="repwd" class="form-control" id="repwd" placeholder="Enter password again">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="age">Age:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="age" name="age" placeholder="Enter age">
             </div>
         </div>
         <div class="form-group">
@@ -80,6 +86,12 @@
             <label class="control-label col-sm-2" for="contact_info">Contact Info</label>
             <div class="col-sm-10">
                 <textarea class="form-control" placeholder="Contact Infor" id="contact_info" name="contactInformation"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="image">Photo</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" placeholder="Your photo" id="image" name="image">
             </div>
         </div>
         <div class="form-group">

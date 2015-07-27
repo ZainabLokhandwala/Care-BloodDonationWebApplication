@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script>
     $(document).ready(function () {
 
@@ -41,35 +42,20 @@
            <li><a href="#receivers">Receivers</a></li>
        </ul>
        <div class="row" id="donors">
-
-           <div class="col col-sm-12">
-               <div class="panel" style="padding: 1em;overflow: hidden;">
-                   <div class="person">
-                       <div class="photo">
-                           <img src="#">
+           <c:forEach items="${donors}" var="i">
+               <div class="col col-sm-12">
+                   <div class="panel" style="padding: 1em;overflow: hidden;">
+                       <div class="person">
+                           <div class="photo">
+                               <img src="">
+                           </div>
+                           <div class="name">Name: </div>
+                           <div class="blood-type">Type: </div>
+                           <div class="btn btn-default" style="width: 100%">Info</div>
                        </div>
-                       <div class="name">Name: </div>
-                       <div class="blood-type">Type: </div>
-                       <div class="btn btn-default" style="width: 100%">Info</div>
-                   </div>
-                   <div class="person">
-                       <div class="photo">
-                           <img src="#">
-                       </div>
-                       <div class="name">Name: </div>
-                       <div class="blood-type">Type: </div>
-                       <div class="btn btn-default" style="width: 100%">Info</div>
-                   </div>
-                   <div class="person">
-                       <div class="photo">
-                           <img src="#">
-                       </div>
-                       <div class="name">Name: </div>
-                       <div class="blood-type">Type: </div>
-                       <div class="btn btn-default" style="width: 100%">Info</div>
                    </div>
                </div>
-           </div>
+           </c:forEach>
        </div>
        <div class="row" id="receivers">
 

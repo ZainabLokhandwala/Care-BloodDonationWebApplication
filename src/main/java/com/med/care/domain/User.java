@@ -22,6 +22,7 @@ public class User {
     protected String allergies;
     protected String city;
     protected String country;
+    protected byte[] image;
     @Column(name = "contact_information")
     protected String contactInformation;
 
@@ -44,8 +45,14 @@ public class User {
         this.city = city;
         this.country = country;
         this.contactInformation = contactInformation;
-        this.sentMessages = sentMessages;
-        this.receivedMessages = receivedMessages;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public String getCity() {

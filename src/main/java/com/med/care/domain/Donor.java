@@ -8,6 +8,7 @@ import java.util.List;
 @DiscriminatorValue("0")
 public class Donor extends User {
 
+    @Column(name = "recent_medications")
     protected String recentMedications;
 
     public Donor() {

@@ -12,16 +12,27 @@
             Welcome To Care,
 
             An online blood donation portal!
-            This is a web application, which aims at connecting blood donors and receivers on a single platform just at the click of a finger.
-            We all know emergencies can happen anytime and someone would be in eager need of blood, and CARE is the best platform for a donor to reach a receiver at this time of emergency or vice versa.
+            This is a web application, which aims at connecting blood donors and receivers on a single platform just at
+            the click of a finger.
+            We all know emergencies can happen anytime and someone would be in eager need of blood, and CARE is the best
+            platform for a donor to reach a receiver at this time of emergency or vice versa.
 
             <br>Donate blood today. And be a HERO!!</i>
         </h3>
-        <div style="background-image: url('/../../${pageContext.request.contextPath}/resources/images/welcome_pic.jpg'); min-height: 27em; background-position: center; background-repeat: no-repeat">
+
+        <div style="position: relative;background-image: url('/../../${pageContext.request.contextPath}/resources/images/welcome_pic.jpg'); min-height: 27em; background-position: center; background-repeat: no-repeat">
+            <h1 style="text-align: center; bottom: 0%; left: 40%; position: absolute; color: black">Register Now!!!</h1>
         </div>
         <div>
-            <div class="btn btn-lg btn-danger" style="margin-left: 35%; float: left; margin-right: 1em">Start as Receiver</div>
-            <div class="btn btn-lg btn-danger" style="float: left">Start as Donor</div>
+            <a href="receiver/signup">
+                <div class="btn btn-lg btn-danger" style="margin-left: 35%; float: left; margin-right: 1em">Start as
+                    Receiver
+                </div>
+            </a>
+
+            <a href="donor/signup">
+                <div class="btn btn-lg btn-danger" style="float: left">Start as Donor</div>
+            </a>
         </div>
     </div>
 </div>

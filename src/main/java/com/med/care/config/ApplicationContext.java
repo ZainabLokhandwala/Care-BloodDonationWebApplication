@@ -48,7 +48,7 @@ public class ApplicationContext {
         DriverManagerDataSource source = new DriverManagerDataSource();
         source.setDriverClassName("com.mysql.jdbc.Driver");
         source.setUsername("root");
-        source.setPassword("123456");
+        source.setPassword("");
         source.setUrl("jdbc:mysql://localhost:3306/care_blood_donation");
         return source;
     }

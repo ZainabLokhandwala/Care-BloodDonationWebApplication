@@ -23,8 +23,13 @@ public class ContextListener implements ServletContextListener {
         Validator validator = validatorFactory.getValidator();
         sce.getServletContext().setAttribute("context", context);
         logger.info("created spring application context and load it to servlet context!!!");
+        for (String beanName: context.getBeanDefinitionNames()) {
+
+            logger.info("Bean: " + beanName);
+        }
         sce.getServletContext().setAttribute("validator", validator);
         logger.info("added validator and load it to servlet context!!!");
+
     }
 
     @Override

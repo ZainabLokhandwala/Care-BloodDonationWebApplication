@@ -1,10 +1,7 @@
 package com.med.care.domain;
 
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
 
@@ -13,7 +10,9 @@ import java.util.List;
 @DiscriminatorValue("1")
 public class Receiver extends User {
 
+    @Column(name = "quantity_needed")
     protected int quantityNeeded;
+    @Column(name = "date_needed")
     protected Date dateNeeded;
 
     public Receiver() {
