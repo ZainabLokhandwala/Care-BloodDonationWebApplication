@@ -4,7 +4,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="name">Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+        <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" >
       </div>
     </div>
     <div class="form-group">
@@ -68,6 +68,12 @@
       <label class="control-label col-sm-2" for="allergies">Allergies</label>
       <div class="col-sm-10">
         <textarea class="form-control" placeholder="Allergies" id="allergies" name="allergies"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="contact_info">Contact Info</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" placeholder="Contact Infor" id="contact_info" name="contactInformation"></textarea>
       </div>
     </div>
     <div class="form-group">

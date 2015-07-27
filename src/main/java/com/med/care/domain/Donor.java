@@ -10,11 +10,20 @@ public class Donor extends User {
 
     protected String recentMedications;
 
+    public Donor() {
+    }
+
     public String getRecentMedications() {
         return recentMedications;
     }
 
+
     public void setRecentMedications(String recentMedications) {
+        this.recentMedications = recentMedications;
+    }
+
+    public Donor(String name, String userName, String password, int age, boolean sex, String bloodGroup, String allergies, String city, String country, String contactInformation, String recentMedications) {
+        super(name, userName, password, age, sex, bloodGroup, allergies, city, country, contactInformation);
         this.recentMedications = recentMedications;
     }
 }

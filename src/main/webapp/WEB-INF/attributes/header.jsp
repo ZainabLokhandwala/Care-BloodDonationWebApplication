@@ -3,9 +3,10 @@
         <div class="panel panel-body">
             <div class="row">
                 <div class="col col-sm-6">
-                    <h1><a href="#" title="scroll down for your viewing pleasure">Share a little, Care a little</a>
+                    <h1><a href="#" title="scroll down for your viewing pleasure"><i>Share a little, Care a little -
+                        Donate Blood</i></a>
 
-                        <p class="lead">Blood donation</p></h1>
+                        <%--<p class="lead">\</p></h1>--%>
                 </div>
                 <div class="col col-sm-6">
                     <div class="well pull-right">

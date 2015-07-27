@@ -1,6 +1,7 @@
 package com.med.care.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,9 +26,27 @@ public class User {
     protected String contactInformation;
 
     @OneToMany(mappedBy = "sender")
-    protected List<Message> sentMessages;
+    protected List<Message> sentMessages = new ArrayList<Message>();
     @OneToMany(mappedBy = "receiver")
-    protected List<Message> receivedMessages;
+    protected List<Message> receivedMessages = new ArrayList<Message>();
+
+    public User() {
+    }
+
+    public User(String name, String userName, String password, int age, boolean sex, String bloodGroup, String allergies, String city, String country, String contactInformation) {
+        this.name = name;
+        this.userName = userName;
+        this.password = password;
+        this.age = age;
+        this.sex = sex;
+        this.bloodGroup = bloodGroup;
+        this.allergies = allergies;
+        this.city = city;
+        this.country = country;
+        this.contactInformation = contactInformation;
+        this.sentMessages = sentMessages;
+        this.receivedMessages = receivedMessages;
+    }
 
     public String getCity() {
         return city;

@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -14,6 +15,15 @@ public class Receiver extends User {
 
     protected int quantityNeeded;
     protected Date dateNeeded;
+
+    public Receiver() {
+    }
+
+    public Receiver(String name, String userName, String password, int age, boolean sex, String bloodGroup, String allergies, String city, String country, String contactInformation, Date dateNeeded, int quantityNeeded) {
+        super(name, userName, password, age, sex, bloodGroup, allergies, city, country, contactInformation);
+        this.dateNeeded = dateNeeded;
+        this.quantityNeeded = quantityNeeded;
+    }
 
     public int getQuantityNeeded() {
         return quantityNeeded;
