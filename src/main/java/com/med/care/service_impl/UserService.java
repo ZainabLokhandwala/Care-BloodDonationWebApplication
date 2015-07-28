@@ -1,6 +1,8 @@
 package com.med.care.service_impl;
 
 
+import com.med.care.dao.IDonorDAO;
+import com.med.care.dao.IReceiverDAO;
 import com.med.care.dao.IUserDAO;
 import com.med.care.domain.User;
 import com.med.care.service.IUserService;
@@ -15,6 +17,8 @@ public class UserService extends AbstractService<User> implements IUserService{
 
     @Autowired
     private IUserDAO userDao;
+    @Autowired private IDonorDAO donorDAO;
+    @Autowired private IReceiverDAO receiverDAO;
 
     @Override
     public JpaRepository getDAO() {
@@ -24,5 +28,12 @@ public class UserService extends AbstractService<User> implements IUserService{
     @Override
     public User findById(Serializable id) {
         return userDao.findOne((String) id);
+    }
+
+    @Override
+    public User findOne(String userName) {
+
+        User user = donorDAO.findOne(userName);
+        return user!= null? user: receiverDAO.findOne(userName);
     }
 }

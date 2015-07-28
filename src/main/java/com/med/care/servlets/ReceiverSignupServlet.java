@@ -60,7 +60,7 @@ public class ReceiverSignupServlet extends BaseServlet {
         }
 
         receiverService.save(receiver);
-        resp.sendRedirect("/index");
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 
     private void retry(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

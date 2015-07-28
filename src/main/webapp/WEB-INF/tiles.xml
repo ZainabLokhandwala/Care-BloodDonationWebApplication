@@ -14,6 +14,11 @@
         <put-attribute name="articles" value="/WEB-INF/attributes/articles.jsp"></put-attribute>
     </definition>
 
+    <definition name="profile" extends=".mainTemplate" template="/WEB-INF/template/profile.jsp">
+        <put-attribute name="donor" value="/WEB-INF/attributes/donor_infor.jsp"></put-attribute>
+        <put-attribute name="receiver" value="/WEB-INF/attributes/receiver_info.jsp"></put-attribute>
+    </definition>
+
     <definition name="receiver_signup" extends=".mainTemplate" template="/WEB-INF/template/receiver_signup.jsp">
         <put-attribute name="receiver_signup_form" value="/WEB-INF/attributes/receiver_signup_form.jsp"></put-attribute>
     </definition>

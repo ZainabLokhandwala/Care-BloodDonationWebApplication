@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/*")
+@WebFilter(urlPatterns = "/*", dispatcherTypes = DispatcherType.REQUEST)
 public class LoginFilter implements Filter {
 
     private Logger logger = Logger.getLogger(LoginFilter.class);
@@ -25,18 +25,18 @@ public class LoginFilter implements Filter {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-        HttpSession session = httpServletRequest.getSession();
-
-        logger.info(session.getAttribute("user"));
 
         logger.info(httpServletRequest.getRequestURI());
-
-        if (session.getAttribute("user") != null) {
+        if (httpServletRequest.getRequestURI().contains("welcome")
+                || httpServletRequest.getRequestURI().contains("login")
+                || httpServletRequest.getRequestURI().contains("resources")
+                || httpServletRequest.getRequestURI().contains("signup")) {
             chain.doFilter(request, response);
             return;
-        } else if (httpServletRequest.getRequestURI().contains("welcome")
-                || httpServletRequest.getRequestURI().contains("login")
-                || httpServletRequest.getRequestURI().contains("resources")) {
+        }
+
+        HttpSession session = httpServletRequest.getSession();
+        if (session.getAttribute("user") != null) {
             chain.doFilter(request, response);
         } else {
             logger.info("not authorized");

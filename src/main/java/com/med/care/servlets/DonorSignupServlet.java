@@ -65,7 +65,7 @@ public class DonorSignupServlet extends BaseServlet {
         }
 
         donorService.save(donor);
-        resp.sendRedirect("/index");
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 
     private void retry(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
