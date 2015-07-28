@@ -9,10 +9,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Service
 @Qualifier("donorService")
-public class DonorService  extends AbstractService<Donor> implements IDonorService{
+public class DonorService extends AbstractService<Donor> implements IDonorService {
 
     @Autowired
     private IDonorDAO donorDAO;
@@ -25,5 +26,21 @@ public class DonorService  extends AbstractService<Donor> implements IDonorServi
     @Override
     public Donor findById(Serializable id) {
         return donorDAO.findOne((String) id);
+    }
+
+    @Override
+    public List<Donor> findUser(String key, String criteria, String criteriaValue) {
+
+        if (criteria == null) {
+
+            return donorDAO.searchByNameOrUserName(key, key);
+        } else if (criteria.equals("city")) {
+
+            return donorDAO.searchByCityOrNameOrUserName(criteriaValue, key, key);
+        } else if (criteria.equals("group")) {
+
+            return donorDAO.searchByBloodGroupOrNameOrUserName(criteriaValue, key, key);
+        }
+        return donorDAO.searchByNameOrUserName(key, key);
     }
 }

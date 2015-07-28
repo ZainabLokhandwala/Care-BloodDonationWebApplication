@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Service
 public class ReceiverService extends AbstractService<Receiver> implements IReceiverService{
@@ -23,5 +24,22 @@ public class ReceiverService extends AbstractService<Receiver> implements IRecei
     @Override
     public Receiver findById(Serializable id) {
         return receiverDAO.findOne((String) id);
+    }
+
+    @Override
+    public List<Receiver> findUser(String key, String criteria, String criteriaValue) {
+        if (criteria == null) {
+
+            return receiverDAO.searchByNameOrUserName(key, key);
+        } else if (criteria.equals("city")) {
+
+            return receiverDAO.searchByCityOrNameOrUserName(criteriaValue, key, key);
+        } else if (criteria.equals("group")) {
+
+            return receiverDAO.searchByBloodGroupOrNameOrUserName(criteriaValue, key, key);
+        } else {
+
+            return receiverDAO.searchByNameOrUserName(key, key);
+        }
     }
 }

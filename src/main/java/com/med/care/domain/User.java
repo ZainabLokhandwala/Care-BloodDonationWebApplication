@@ -31,6 +31,7 @@ public class User {
     @OneToMany(mappedBy = "receiver")
     protected List<Message> receivedMessages = new ArrayList<Message>();
 
+
     public User() {
     }
 
