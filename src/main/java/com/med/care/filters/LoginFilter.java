@@ -30,7 +30,8 @@ public class LoginFilter implements Filter {
         if (httpServletRequest.getRequestURI().contains("welcome")
                 || httpServletRequest.getRequestURI().contains("login")
                 || httpServletRequest.getRequestURI().contains("resources")
-                || httpServletRequest.getRequestURI().contains("signup")) {
+                || httpServletRequest.getRequestURI().contains("signup")
+                || (httpServletRequest.getRequestURI()).equals(httpServletRequest.getContextPath() + "/")) {
             chain.doFilter(request, response);
             return;
         }

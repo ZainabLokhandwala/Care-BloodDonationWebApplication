@@ -8,6 +8,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="${pageContext.request.contextPath}/index">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/welcome">Signup</a></li>
+                <li><a href="${pageContext.request.contextPath}/inbox">Inbox</a></li>
             </ul>
 
             <ul class="nav navbar-right navbar-nav">
@@ -16,7 +17,7 @@
                         <i class="glyphicon glyphicon-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
-                        <li><a href="${pageContext.request.contextPath}/profile">Profile</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/profile?name=${user.userName}">Profile</a></li>
                         <li class="divider"></li>
                         <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
                     </ul>
