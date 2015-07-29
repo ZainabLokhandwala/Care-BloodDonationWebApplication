@@ -12,6 +12,8 @@ public class InboxServlet extends BaseServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        String receiver = req.getParameter("name");
+        req.setAttribute("receiver", receiver);
         req.getRequestDispatcher("/WEB-INF/inbox.jsp").forward(req, resp);
     }
 }

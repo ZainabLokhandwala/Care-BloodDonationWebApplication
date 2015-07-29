@@ -1,7 +1,6 @@
 package com.med.care.domain;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "messages")
@@ -17,13 +16,13 @@ public class Message {
     @JoinColumn(name = "receiver")
     protected User receiver;
     @Column(name = "date_time")
-    protected Date dateTime;
+    protected long dateTime;
 
-    public Date getDateTime() {
+    public long getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(Date dateTime) {
+    public void setDateTime(long dateTime) {
         this.dateTime = dateTime;
     }
 
