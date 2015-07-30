@@ -60,8 +60,7 @@
             function writeResponse(text) {
 
                 text = JSON.parse(text)
-                alert($("#senders").html())
-                $("senders").append("<li><a href=inbox?name=" + text.sender + ">" + text.sender + "</a></li>")
+                $("#senders").append("<li><a href=inbox?name=" + text.sender + ">" + text.sender + "</a></li>")
                 html = "<div class=\'odd\'>" + text.sender + ": " + text.content + "</div>";
                 chatbox.innerHTML += html;
             }
