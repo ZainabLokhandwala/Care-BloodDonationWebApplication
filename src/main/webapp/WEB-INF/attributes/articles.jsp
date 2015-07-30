@@ -42,9 +42,10 @@
             <li><a href="#receivers">Receivers</a></li>
         </ul>
         <div class="row" id="donors">
-            <c:forEach items="${donors}" var="i">
-                <div class="col col-sm-12">
+
+                <div class="col col-sm-12" style="float:left;">
                     <div class="panel" style="padding: 1em;overflow: hidden;">
+                        <c:forEach items="${donors}" var="i">
                         <div class="person">
                             <div class="photo">
                                 <img src="${pageContext.request.contextPath}/user/image?name=${i.userName}" width="100%" height="100%">
@@ -55,9 +56,9 @@
                                 <div class="btn btn-default" style="width: 100%">Info</div>
                             </a>
                         </div>
+                        </c:forEach>
                     </div>
                 </div>
-            </c:forEach>
         </div>
         <div class="row" id="receivers">
             <c:forEach items="${receivers}" var="i">
