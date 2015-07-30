@@ -9,8 +9,8 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="${pageContext.request.contextPath}/index">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/signup">Signup</a></li>
-                <li class="dropdown">
-                    <a href="${pageContext.request.contextPath}/inbox">Inbox <i class="glyphicon glyphicon-chevron-down"></i></a>
+                <li class="dropdown dropdown-toggle">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Inbox <i class="glyphicon glyphicon-chevron-down"></i></a>
                     <ul id="senders" class="dropdown-menu">
 
                     </ul>

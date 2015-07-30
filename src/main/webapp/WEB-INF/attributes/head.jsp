@@ -49,7 +49,7 @@
                 };
 
                 webSocket.onclose = function (event) {
-                    writeResponse("Connection closed");
+//                    writeResponse("Connection closed");
                 };
             }
 
