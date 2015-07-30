@@ -73,7 +73,7 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="date_needed">Date needed</label>
             <div class="col-sm-10">
-                <input class="form-control" placeholder="Date needed" id="date_needed" name="date_needed">
+                <input class="form-control date" placeholder="Date needed" id="date_needed" name="date_needed">
             </div>
         </div>
         <div class="form-group">

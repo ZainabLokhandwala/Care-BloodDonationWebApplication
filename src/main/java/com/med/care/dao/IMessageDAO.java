@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface IMessageDAO extends JpaRepository<Message, Integer> {
 
-    @Query("from Message m where m.sender.userName=:sender and m.receiver.userName=:receiver")
+    @Query("from Message m where m.sender.userName=:sender and m.receiver.userName=:receiver order by m.id asc")
     List<Message> findBySenderUserNameAndReceiverUserName(@Param("sender")String senderUserName,
                                                          @Param("receiver") String receiverUserName);
 }

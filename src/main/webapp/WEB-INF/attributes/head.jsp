@@ -60,8 +60,8 @@
             function writeResponse(text) {
 
                 text = JSON.parse(text)
-                $("senders").
-                        html("<li><a href=inbox?name=" + text.sender + ">" + text.sender + "</a></li>")
+                alert($("#senders").html())
+                $("senders").append("<li><a href=inbox?name=" + text.sender + ">" + text.sender + "</a></li>")
                 html = "<div class=\'odd\'>" + text.sender + ": " + text.content + "</div>";
                 chatbox.innerHTML += html;
             }
@@ -87,6 +87,11 @@
             $("#send_btn").click(function () {
                 send();
                 $("#messageinput").val("")
+            })
+
+            $(".date").datepicker({
+
+                dateFormat: 'yy-mm-dd'
             })
 
         })
