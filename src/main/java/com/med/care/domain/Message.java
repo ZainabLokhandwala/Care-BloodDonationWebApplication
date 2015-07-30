@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "messages")
-public class Message {
+public class Message implements Comparable<Message> {
 
     @Id
     protected int id;
@@ -56,5 +56,21 @@ public class Message {
 
     public void setReceiver(User receiver) {
         this.receiver = receiver;
+    }
+
+    @Override
+    public int compareTo(Message o) {
+
+        Integer id = new Integer(getId());
+        Integer otherId = new Integer(o.getId());
+        return id.compareTo(otherId);
+//        if (id > otherId) {
+//            return -1;
+//        } else if (id < otherId) {
+//            return 1;
+//        } else {
+//
+//            return 0;
+//        }
     }
 }

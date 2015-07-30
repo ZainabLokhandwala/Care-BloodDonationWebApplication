@@ -1,5 +1,6 @@
 package com.med.care.filters;
 
+import com.med.care.domain.User;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Collections;
 
 @WebFilter(urlPatterns = "/*", dispatcherTypes = DispatcherType.REQUEST)
 public class LoginFilter implements Filter {
@@ -39,14 +41,17 @@ public class LoginFilter implements Filter {
         }
 
         HttpSession session = httpServletRequest.getSession();
-        if (session.getAttribute("user") != null) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            Collections.sort(user.getReceivedMessages());
             chain.doFilter(request, response);
+            Collections.sort(user.getReceivedMessages());
             if (context == null) {
                 context = (ApplicationContext) request.getServletContext().getAttribute("context");
             }
         } else {
             logger.info("not authorized");
-            logger.info(session.getAttribute("user"));
+            logger.info(user);
             ((HttpServletResponse) response).sendRedirect(httpServletRequest.getContextPath() + "/login");
         }
     }

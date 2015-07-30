@@ -12,7 +12,9 @@
                 <li class="dropdown dropdown-toggle">
                     <a class="dropdown-toggle" data-toggle="dropdown">Inbox <i class="glyphicon glyphicon-chevron-down"></i></a>
                     <ul id="senders" class="dropdown-menu">
-
+                        <c:forEach var="i" items="${user.receivedMessages}" begin="0" end="15" step="1">
+                            <li> <a href="${pageContext.request.contextPath}/inbox?name=${i.sender.userName}">${i.sender.userName}</li></a>
+                        </c:forEach>
                     </ul>
                 </li>
             </ul>

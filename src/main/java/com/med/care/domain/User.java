@@ -26,9 +26,9 @@ public class User {
     @Column(name = "contact_information")
     protected String contactInformation;
 
-    @OneToMany(mappedBy = "sender")
+    @OneToMany(mappedBy = "sender", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     protected List<Message> sentMessages = new ArrayList<Message>();
-    @OneToMany(mappedBy = "receiver")
+    @OneToMany(mappedBy = "receiver", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     protected List<Message> receivedMessages = new ArrayList<Message>();
 
 

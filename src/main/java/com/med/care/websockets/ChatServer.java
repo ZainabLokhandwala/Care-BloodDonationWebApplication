@@ -3,6 +3,7 @@ package com.med.care.websockets;
 import com.med.care.domain.Message;
 import com.med.care.domain.User;
 import com.med.care.service.IMessageService;
+import com.med.care.service.IUserService;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
@@ -42,7 +43,12 @@ public class ChatServer extends ServerEndpointConfig.Configurator {
     public void onMessage(Message message, Session session) throws IOException, EncodeException {
 
         IMessageService messageService = context.getBean(IMessageService.class);
+        IUserService userService = context.getBean(IUserService.class);
         messageService.save(message);
+        HttpSession httpSession = (HttpSession) session.getUserProperties().get("httpSession");
+
+        User user = (User) httpSession.getAttribute("user");
+        httpSession.setAttribute("user", userService.findOne(user.getUserName()));
 
         Map<String, Object> properties = session.getUserProperties();
         String userName = (String) properties.get("userName");
@@ -75,6 +81,7 @@ public class ChatServer extends ServerEndpointConfig.Configurator {
         logger.info(session.getId() + " has opened a connection");
         userSessions.add(session);
         HttpSession httpSession = (HttpSession) config.getUserProperties().get("httpSession");
+        session.getUserProperties().put("httpSession", httpSession);
         ServletContext servletContext = httpSession.getServletContext();
         this.context = (ApplicationContext) servletContext.getAttribute("context");
         User user = (User) httpSession.getAttribute("user");

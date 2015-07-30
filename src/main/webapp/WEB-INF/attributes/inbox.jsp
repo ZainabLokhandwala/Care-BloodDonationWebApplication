@@ -17,7 +17,7 @@
 </style>
 
 <div class="panel col-lg-10 chatbox" id="chatbox">
-    <c:forEach items="${messages}" var="i" varStatus="loop">
+    <c:forEach items="${m}" var="i" varStatus="loop">
         <div class="<c:if test='${(loop.index % 2) eq 0}'>odd</c:if>
         <c:if test='${(loop.index % 2) eq 1}'>even</c:if>">
             ${i.sender.userName}: ${i.content}

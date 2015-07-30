@@ -14,6 +14,14 @@
         <put-attribute name="articles" value="/WEB-INF/attributes/articles.jsp"></put-attribute>
     </definition>
 
+    <definition name="receiver_edit" extends=".mainTemplate" template="/WEB-INF/template/inbox.jsp">
+        <put-attribute name="donor_edit_form" value="/WEB-INF/attributes/receiver_edit_form.jsp"></put-attribute>
+    </definition>
+
+    <definition name="donor_edit" extends=".mainTemplate" template="/WEB-INF/template/inbox.jsp">
+        <put-attribute name="donor_edit_form" value="/WEB-INF/attributes/donor_edit_form.jsp"></put-attribute>
+    </definition>
+
     <definition name="inbox" extends=".mainTemplate" template="/WEB-INF/template/inbox.jsp">
         <put-attribute name="inbox" value="/WEB-INF/attributes/inbox.jsp"></put-attribute>
     </definition>

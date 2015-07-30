@@ -21,4 +21,6 @@ public interface IUserService extends IService<User> {
      * @return the user, either donor or receiver or null if not found
      */
     User findOne(String userName);
+
+    List<User> findInboxedUser(String id);
 }
