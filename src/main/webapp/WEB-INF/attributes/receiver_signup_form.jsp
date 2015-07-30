@@ -1,5 +1,5 @@
 <div class="panel" style="padding-left: 20%; padding-right: 25%">
-    <h2>Register as Donor</h2>
+    <h2>Register as Receiver</h2>
     <form enctype="multipart/form-data" class="form-horizontal" role="form" action="signup" method="post">
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Name:</label>
