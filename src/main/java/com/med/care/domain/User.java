@@ -35,6 +35,22 @@ public class User {
     public User() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        return userName.equals(user.userName);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return userName.hashCode();
+    }
+
     public User(String name, String userName, String password, int age, boolean sex, String bloodGroup, String allergies, String city, String country, String contactInformation) {
         this.name = name;
         this.userName = userName;

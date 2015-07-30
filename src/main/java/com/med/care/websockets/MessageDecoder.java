@@ -1,7 +1,7 @@
 package com.med.care.websockets;
 
 
-import com.med.care.dao.IMessageService;
+import com.med.care.dao.IMessageDAO;
 import com.med.care.domain.Message;
 import com.med.care.filters.LoginFilter;
 import com.med.care.service.IUserService;
@@ -29,7 +29,7 @@ public class MessageDecoder implements Decoder.Text<Message> {
         String receiverId = jsonObject.get("receiver").toString();
 
         // get service beans
-        IMessageService messageService = context.getBean(IMessageService.class);
+        IMessageDAO messageService = context.getBean(IMessageDAO.class);
         IUserService userService = context.getBean(IUserService.class);
 
         // retrieve sender and receiver information

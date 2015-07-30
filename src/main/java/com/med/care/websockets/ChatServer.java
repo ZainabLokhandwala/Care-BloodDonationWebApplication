@@ -1,9 +1,8 @@
 package com.med.care.websockets;
 
-import com.med.care.dao.IMessageService;
 import com.med.care.domain.Message;
 import com.med.care.domain.User;
-import com.med.care.service.IUserService;
+import com.med.care.service.IMessageService;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
@@ -28,22 +27,22 @@ import java.util.Set;
         decoders = MessageDecoder.class)
 public class ChatServer extends ServerEndpointConfig.Configurator {
 
-    private Logger logger = Logger.getLogger(ChatServer.class);
-    /**
-     * Spring application context
-     */
-    private ApplicationContext context;
     /**
      * We manage chat between user via a Set of user chat session.
      * The Set must be synchronized
      */
     private static Set<Session> userSessions = Collections.synchronizedSet(new HashSet<Session>());
+    private Logger logger = Logger.getLogger(ChatServer.class);
+    /**
+     * Spring application context
+     */
+    private ApplicationContext context;
 
     @OnMessage
     public void onMessage(Message message, Session session) throws IOException, EncodeException {
 
         IMessageService messageService = context.getBean(IMessageService.class);
-        IUserService userService = context.getBean(IUserService.class);
+        messageService.save(message);
 
         Map<String, Object> properties = session.getUserProperties();
         String userName = (String) properties.get("userName");
@@ -55,15 +54,18 @@ public class ChatServer extends ServerEndpointConfig.Configurator {
 
             for (Session s : userSessions) {
 
-               try {
-                   if (s.isOpen()  && s.getUserProperties().get("userName").equals(message.getReceiver().getUserName())) {
+                try {
+                    if (s.isOpen() && (s.getUserProperties().get("userName").
+                            equals(message.getReceiver().getUserName()))
+                            || s.getUserProperties().get("userName").
+                            equals(message.getSender().getUserName())) {
 
-                       s.getBasicRemote().sendObject(message);
-                   }
-               } catch (Exception e) {
+                        s.getBasicRemote().sendObject(message);
+                    }
+                } catch (Exception e) {
 
-                   e.printStackTrace();
-               }
+                    e.printStackTrace();
+                }
             }
         }
     }

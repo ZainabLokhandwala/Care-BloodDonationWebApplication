@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-static-top" style="position: fixed;top: 0;width: 100%">
     <div class="container">
         <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
@@ -7,8 +8,13 @@
         <div class="nav-collapse collase">
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="${pageContext.request.contextPath}/index">Home</a></li>
-                <li><a href="${pageContext.request.contextPath}/welcome">Signup</a></li>
-                <li><a href="${pageContext.request.contextPath}/inbox">Inbox</a></li>
+                <li><a href="${pageContext.request.contextPath}/signup">Signup</a></li>
+                <li class="dropdown">
+                    <a href="${pageContext.request.contextPath}/inbox">Inbox <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul id="senders" class="dropdown-menu">
+
+                    </ul>
+                </li>
             </ul>
 
             <ul class="nav navbar-right navbar-nav">

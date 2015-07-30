@@ -3,6 +3,7 @@ package com.med.care.dao;
 
 import com.med.care.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 

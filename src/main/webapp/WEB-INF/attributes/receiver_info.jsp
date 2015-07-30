@@ -77,7 +77,7 @@
         <table>
             <tr>
                 <td><img src="${pageContext.request.contextPath}/user/image?name=${profile.userName}" width="100%" height="180em">
-                    <a><div class="form-control btn btn-danger">Inbox</div></a></td>
+                    <a href="${pageContext.request.contextPath}/inbox?name=${profile.userName}"><div class="form-control btn btn-danger">Inbox</div></a></td>
             </tr>
         </table>
     </div>
